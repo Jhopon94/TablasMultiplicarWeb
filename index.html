@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Yomu Multiplicacion</title>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+
+</head>
+
+<body>
+    <div class="contSeleccTablas" id="contSeleccTablas">
+        <ol class="listaSelecc" id="listaSelecc">
+            <li><label for="tablaUno">Tabla del 1</label><input type="checkbox" id="tablaUno" /></li>
+            <li><label for="tablaDos">Tabla del 2</label><input type="checkbox" id="tablaDos" /></li>
+            <li><label for="tablaTres">Tabla del 3</label><input type="checkbox" id="tablaTres" /></li>
+            <li><label for="tablaCuatro">Tabla del 4</label><input type="checkbox" id="tablaCuatro" /></li>
+            <li><label for="tablaCinco">Tabla del 5</label><input type="checkbox" id="tablaCinco" /></li>
+            <li><label for="tablaSeis">Tabla del 6</label><input type="checkbox" id="tablaSeis" /></li>
+            <li><label for="tablaSiete">Tabla del 7</label><input type="checkbox" id="tablaSiete" /></li>
+            <li><label for="tablaOcho">Tabla del 8</label><input type="checkbox" id="tablaOcho" /></li>
+            <li><label for="tablaNueve">Tabla del 9</label><input type="checkbox" id="tablaNueve" /></li>
+        </ol>
+    </div>
+    <div class="contAccion">
+        <section class="contBtnExamen">
+            <button onclick="if(!modoExamen) {ActivarModal();} else {CancelarExamen();}" class="btn btnExamen"
+                id="btnExamen">
+                Hacer Examen
+            </button>
+        </section>
+        <section class="accion">
+            <label class="primerNum numeros" id="numUno"></label>
+            <label class="signos">X</label>
+            <label class="segundoNum numeros" id="numDos"></label>
+            <label class="signos"> = </label>
+            <input oninput="DosDigitos()" type="number" id="cajitaNum" autocomplete="off" />
+        </section>
+        <section class="botones">
+            <button onclick="if(!modoExamen) {nuevaMulti();} else {NuevaMultiExamen();}" class="btn" id="btnNueva">
+                Nueva
+            </button>
+            <button onclick="if(!modoExamen) {Multiplicar();} else {MultiplicarModoExamen();}" class="btn"
+                id="btnCalificar">
+                Calificar
+            </button>
+        </section>
+    </div>
+    <div id="fondoModal" class="inactivo">
+        <div id="modal" class="inactivo">
+            <h1>Elige una Tabla:</h1>
+            <section class="contBotonesExamen">
+                <button value="1" onclick="ActivarExamen(this.value)">1</button>
+                <button value="2" onclick="ActivarExamen(this.value)">2</button>
+                <button value="3" onclick="ActivarExamen(this.value)">3</button>
+                <button value="4" onclick="ActivarExamen(this.value)">4</button>
+                <button value="5" onclick="ActivarExamen(this.value)">5</button>
+                <button value="6" onclick="ActivarExamen(this.value)">6</button>
+                <button value="7" onclick="ActivarExamen(this.value)">7</button>
+                <button value="8" onclick="ActivarExamen(this.value)">8</button>
+                <button value="9" onclick="ActivarExamen(this.value)">9</button>
+            </section>
+            <button class="btnCancelar" onclick="CancelarExamen()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
