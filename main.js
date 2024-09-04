@@ -165,7 +165,10 @@ function NuevaMultiExamen() {
         arrayResultados.forEach(resultado => {
             if (resultado === true) auxCalificacion += 1;
         });
-        alert("Examen terminado, calificacion: " + RedondearCalificacion(auxCalificacion));// CalificarExamen();
+        // Calificar examen con retraso para que se pinte la ultima tabla;
+        setTimeout(function () {
+            alert("Examen terminado, calificacion: " + RedondearCalificacion(auxCalificacion));
+        }, 0);
         CancelarExamen();
     }
 
@@ -255,12 +258,12 @@ function CerrarModal() {
     modal.classList.add("inactivo");
 }
 
-function CrearListaTablaExamen(){
+function CrearListaTablaExamen() {
     //Se crea array con las tablas
     let arrayTablasResultado = [];
     //Se insertan los valores según la tabla seleecionada
-    for(let i = 1; i <= 9; i++){
-        arrayTablasResultado.push(tablaSeleccExamen.toString() + " X " + i.toString() );
+    for (let i = 1; i <= 9; i++) {
+        arrayTablasResultado.push(tablaSeleccExamen.toString() + " X " + i.toString());
     }
     //Se crea la lista ordenada
     const listaTablaExamen = document.createElement('ol');
